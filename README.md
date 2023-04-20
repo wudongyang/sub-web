@@ -18,6 +18,23 @@ https://v2rayssr.com/sub-web.html
     2. nginx 域名反向代理到 127.0.0.1:25500
     3. 将后端的程序设置成开机自动运行，参考博客
 6. 这样访问前端代码，就能使用我们自己的后端生成订阅链接
+7. 随系统启动可以设置  /etc/systemd/system，创建一个名为 sub.service 的文件
+
+```
+[Unit]
+Description=A API For Subscription Convert
+After=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/root/subconverter/subconverter
+WorkingDirectory=/root/subconverter
+Restart=always
+RestartSec=10
+ 
+[Install]
+WantedBy=multi-user.target
+```
 
 ## Table of Contents
 

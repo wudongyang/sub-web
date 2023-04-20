@@ -2,6 +2,23 @@
 
 基于 vue-cli 与 [tindy2013/subconverter](https://github.com/tindy2013/subconverter) 后端实现的配置自动生成。
 
+## 写在前面
+
+参考文档：
+https://v2rayssr.com/sub-web.html
+
+总结起来主要以下几点：
+
+1. 需要后端 + 前端配合使用，当然不实用前端也可以，需要研究后端的接口然后通过 postman 之类的调用
+2. 这里只是前端的代码
+3. 后端代码可以直接使用编译好的文件：https://github.com/tindy2013/subconverter/releases
+4. 前端正常安装部署，其中需要修改的是 src/view/Subconverter.vue 中的 backendOptions，改成后端的域名。以及 evn 中有关后端的域名
+5. 后端需要设置
+    1. subconverter/pref.ini 中的 api_access_token 设置成复杂的字符串，managed_config_prefix 设置成对应的后端域名，比如 suc.tvos.io，listen=127.0.0.1
+    2. nginx 域名反向代理到 127.0.0.1:25500
+    3. 将后端的程序设置成开机自动运行，参考博客
+6. 这样访问前端代码，就能使用我们自己的后端生成订阅链接
+
 ## Table of Contents
 
 - [ChangeLog](#ChangeLog)
@@ -93,6 +110,14 @@ server {
     }
 }
 ```
+
+## backend
+
+可以直接使用 release 版本
+https://github.com/tindy2013/subconverter/releases
+
+
+
 
 ## Related
 

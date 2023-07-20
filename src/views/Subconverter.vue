@@ -296,7 +296,7 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "http://suc.tvos.io/sub?" }],
+        backendOptions: [{ value: "http://suc.satslabs.xyz/sub?" }],
         remoteConfig: [
           {
             label: "universal",
